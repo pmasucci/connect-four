@@ -1,0 +1,21 @@
+{
+  "name": "connect-four",
+  "version": "0.0.0",
+  "description": "connect four",
+  "main": "index.html",
+  "authors": [
+    "peter masucci"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.4"
+  }
+}
