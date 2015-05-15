@@ -1,0 +1,9 @@
+{
+  "firebase": "connect-four-pm",
+  "public": ".",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

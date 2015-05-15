@@ -1,14 +1,16 @@
 var players = ['b', 'r'];
+var playerNames=['Black', 'Red'];
 var player = 0;
 var gameWon = false;
-var playerScore = [0,0]
+var playerScore = [0,0];
+var death = [];
+var turnCount = 0;
 board = {
   cols: {},
   rows: {}
 };
 
-$(document).ready(function() {
-
+$(document).ready(function(){
   $('#restart').click(function() {
     $('.chip').addClass('drop');
     setTimeout(function() {
@@ -26,6 +28,7 @@ $(document).ready(function() {
 
   $('.col-xs-1').click(function() {
     if (validMove(this) && !gameWon) {
+      turnCount++;
       displayChip(player, this);
       storeChip(player, this);
 
@@ -34,6 +37,10 @@ $(document).ready(function() {
         $('#restart').prop('disabled', false);
         playerScore[player]++;
         $('.' + players[player] + 'score').text(playerScore[player]);
+        $('.modal-title').text(playerNames[player] + ' has won!');
+        refreshDeathMessages();
+        $('.modal-body').text(getDeathMessage);
+        $('#myModal').modal('show');
       }
 
       player = 1 - player;
@@ -50,6 +57,15 @@ $(document).ready(function() {
     lastEmpty.removeClass('empty');
 
   }
+
+  function getDeathMessage(){
+    return death[getRandomInt(0,death.length)];
+
+  }
+
+  function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
   function validMove(column) {
     var ret = false;
