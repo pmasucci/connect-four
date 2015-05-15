@@ -1,16 +1,16 @@
-var players = ['b', 'r'];
-var playerNames=['Black', 'Red'];
-var player = 0;
-var gameWon = false;
-var playerScore = [0,0];
-var death = [];
-var turnCount = 0;
-board = {
-  cols: {},
-  rows: {}
-};
+$(document).ready(function() {
+  var players = ['b', 'r'];
+  var playerNames = ['Black', 'Red'];
+  var player = 0;
+  var firstMove = 0;
+  var gameWon = false;
+  var playerScore = [0, 0];
+  var turnCount = 0;
+  board = {
+    cols: {},
+    rows: {}
+  };
 
-$(document).ready(function(){
   $('#restart').click(function() {
     $('.chip').addClass('drop');
     setTimeout(function() {
@@ -24,6 +24,8 @@ $(document).ready(function(){
       rows: {}
     };
     gameWon = false;
+    player = 1 - firstMove;
+    firstMove = player;
   });
 
   $('.col-xs-1').click(function() {
@@ -38,11 +40,11 @@ $(document).ready(function(){
         playerScore[player]++;
         $('.' + players[player] + 'score').text(playerScore[player]);
         $('.modal-title').text(playerNames[player] + ' has won!');
-        refreshDeathMessages();
-        $('.modal-body').text(getDeathMessage);
+        refreshDeathMessages(playerNames[1-player]);
+        $('.modal-body').text(getDeathMessage());
         $('#myModal').modal('show');
-      }
-      else if(gameWon === false){
+
+      } else if (gameWon === false) {
         $('#restart').prop('disabled', false);
         $('.modal-title').text('Nobody has won!?');
         $('.modal-body').text('Pathetic...');
@@ -64,14 +66,14 @@ $(document).ready(function(){
 
   }
 
-  function getDeathMessage(){
-    return death[getRandomInt(0,death.length)];
+  function getDeathMessage() {
+    return death[getRandomInt(0, death.length)];
 
   }
 
   function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 
   function validMove(column) {
     var ret = false;
@@ -153,7 +155,6 @@ $(document).ready(function(){
 
         }
         if (lCDiag.match(/b{4}|r{4}/)) {
-          console.log("Pack it up, you win.");
           return true;
         }
 
@@ -171,8 +172,8 @@ $(document).ready(function(){
 
     }
 
-    if(turnCount === 42){
-        return false;
+    if (turnCount === 42) {
+      return false;
     }
   }
 
