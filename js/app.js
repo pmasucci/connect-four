@@ -42,6 +42,12 @@ $(document).ready(function(){
         $('.modal-body').text(getDeathMessage);
         $('#myModal').modal('show');
       }
+      else if(gameWon === false){
+        $('#restart').prop('disabled', false);
+        $('.modal-title').text('Nobody has won!?');
+        $('.modal-body').text('Pathetic...');
+        $('#myModal').modal('show');
+      }
 
       player = 1 - player;
 
@@ -163,6 +169,10 @@ $(document).ready(function(){
         return true;
       }
 
+    }
+
+    if(turnCount === 42){
+        return false;
     }
   }
 
