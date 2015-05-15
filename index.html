@@ -2,249 +2,253 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Connect Four</title>
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Connect Four</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-8 col-xs-offset-2">
-                <div class="row">
-                    <div class="col-xs-1" id="col0">
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-1" id="col1">
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-1" id="col2">
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-1" id="col3">
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-1" id="col4">
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-1" id="col5">
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-1" id="col6">
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 square">
-                                <div class="hole empty"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+    <div class="col-xs-2"><button id="restart" class="btn btn-lg btn-primary" disabled>Reset Game</button><div class="score"><h3>Red:</h3><span class="rscore">0</span><h3>Black:</h3><span class="bscore">0</span></div>
     </div>
-    <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="js/app.js" type="text/javascript"></script>
+
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-xs-1" id="col0">
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-1" id="col1">
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-1" id="col2">
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-1" id="col3">
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-1" id="col4">
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-1" id="col5">
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-1" id="col6">
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 square">
+                <div class="hole empty"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="js/app.js" type="text/javascript"></script>
 </body>
 
 </html>

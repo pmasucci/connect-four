@@ -1,3 +1,26 @@
+@-webkit-keyframes slidein {
+  from {
+    -webkit-transform: translateY(-500px);
+
+  }
+
+  to {
+    -webkit-transform: translateY(5px);
+  }
+}
+
+@-webkit-keyframes dropout {
+  from {
+    -webkit-transform: translateY(0px);
+
+  }
+
+  to {
+    -webkit-transform: translateY(1000px);
+  }
+}
+
+
 .square{
   height:111px;
 }
@@ -6,6 +29,7 @@
   width:14.285714286%;
   background-color:yellow;
   padding:0;
+  z-index:4;
 }
 
 .hole{
@@ -21,4 +45,25 @@
 }
 .b{
   background-color: black;
+}
+
+.chip{
+  height:100%;
+  width:100%;
+  border-radius:50%;
+  animation: slidein 1s;
+  -webkit-animation: slidein 0.5s;
+  -webkit-transition: all 500ms cubic-bezier(0.840, -0.005, 1.000, 1.365);
+
+}
+
+.drop{
+  -webkit-animation: dropout 1s forwards;
+  -webkit-transition: all 500ms cubic-bezier(1.000, -0.010, 1.000, 1.045);
+}
+.btn{
+  width:100%;
+}
+.score{
+  text-align:center;
 }

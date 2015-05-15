@@ -1,19 +1,43 @@
 var players = ['b', 'r'];
 var player = 0;
 var gameWon = false;
+var playerScore = [0,0]
 board = {
   cols: {},
   rows: {}
 };
 
 $(document).ready(function() {
+
+  $('#restart').click(function() {
+    $('.chip').addClass('drop');
+    setTimeout(function() {
+      $('.chip').remove();
+    }, 500);
+    $('.hole').addClass('empty');
+    $('#restart').prop('disabled', true);
+
+    board = {
+      cols: {},
+      rows: {}
+    };
+    gameWon = false;
+  });
+
   $('.col-xs-1').click(function() {
     if (validMove(this) && !gameWon) {
       displayChip(player, this);
       storeChip(player, this);
-      player = 1 - player;
 
       gameWon = checkWinner();
+      if (gameWon) {
+        $('#restart').prop('disabled', false);
+        playerScore[player]++;
+        $('.' + players[player] + 'score').text(playerScore[player]);
+      }
+
+      player = 1 - player;
+
 
 
     }
@@ -22,7 +46,7 @@ $(document).ready(function() {
   function displayChip(player, column) {
     column = $(column);
     lastEmpty = column.find('.empty').last();
-    lastEmpty.addClass(players[player]);
+    lastEmpty.html('<div class="chip ' + players[player] + '" ></div>');
     lastEmpty.removeClass('empty');
 
   }
@@ -93,23 +117,23 @@ $(document).ready(function() {
         for (i = 1; board.cols[0] && board.cols[i - 1] && board.cols[i - 1].length && col === '0'; i++) {
           rCDiag += board.cols[i - 1][i + j];
         }
-        if(rCDiag.match(/b{4}|r{4}/)){
-        return true;
-      }
+        if (rCDiag.match(/b{4}|r{4}/)) {
+          return true;
+        }
       }
 
       //----------
       //check diags up right side
-      for(j = 0; j < 2; j++){
+      for (j = 0; j < 2; j++) {
         lCDiag = '';
-        for(i = 1; board.cols[6] && board.cols[7 - i] && board.cols[7-i].length && col === '6'; i++){
-            lCDiag += board.cols[7-i][i+j];
+        for (i = 1; board.cols[6] && board.cols[7 - i] && board.cols[7 - i].length && col === '6'; i++) {
+          lCDiag += board.cols[7 - i][i + j];
 
         }
-        if(lCDiag.match(/b{4}|r{4}/)){
-        console.log("Pack it up, you win.");
-        return true;
-      }
+        if (lCDiag.match(/b{4}|r{4}/)) {
+          console.log("Pack it up, you win.");
+          return true;
+        }
 
 
       }
